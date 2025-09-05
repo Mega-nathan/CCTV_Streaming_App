@@ -4,7 +4,7 @@ const path = require("path");
 const fs=require("fs");
 
 const app = express();
-const PORT = 5000;
+const PORT = 3000;
 
 // RTSP URL from your mobile IP Webcam app
 const RTSP_URL = "rtsp://199.168.1.100:554/h264_ulaw.sdp"; // replace with your phone's stream
