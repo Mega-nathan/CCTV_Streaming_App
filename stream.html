@@ -22,7 +22,9 @@
   </style>
 </head>
 <body>
-  <video id="video" controls autoplay></video>
+  <!--<video id="video" controls autoplay></video>-->
+  <video id="video" controls autoplay muted playsinline></video>
+
 
   <script>
     const video = document.getElementById('video');
@@ -36,6 +38,23 @@
       // Safari supports HLS natively
       video.src = videoSrc;
     }
+
+      // const video = document.getElementById('video');
+      // const videoSrc = "http://localhost:5000/hls/stream.m3u8"; 
+
+      // if (Hls.isSupported()) {
+      //   const hls = new Hls({ debug: true });
+      //   hls.loadSource(videoSrc);
+      //   hls.attachMedia(video);
+
+      //   hls.on(Hls.Events.ERROR, function (event, data) {
+      //     console.error("HLS.js error:", data);
+      //   });
+      // } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      //   video.src = videoSrc;
+      // } else {
+      //   console.error("HLS not supported in this browser.");
+      // }
   </script>
 </body>
 </html>
