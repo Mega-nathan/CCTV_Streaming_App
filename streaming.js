@@ -1,10 +1,10 @@
-const express = require("express");
-const { spawn } = require("child_process");
-const path = require("path");
-const fs = require("fs");
+const express = require("express"); // Importing express
+const { spawn } = require("child_process"); 
+const path = require("path"); // importing path for path handling 
+const fs = require("fs"); // importing fs for file handling
 
-const app = express();
-const PORT = 3000;
+const app = express(); // Initializing express
+const PORT = 5000; // Port number 3000
 
 // RTSP URL from your mobile IP Webcam app
 const RTSP_URL = "";
@@ -27,7 +27,7 @@ const ffmpegHLS = spawn("ffmpeg", [
   "-hls_time", "2",               // 2-second segments
   "-hls_list_size", "5",          // Keep last 5 segments
   "-hls_flags", "delete_segments", // Auto-delete old segments
-  path.join(hlsPath, "stream.m3u8")
+  path.join(hlsPath, "stream.m3u8") // for storing streams
 ]);
 
 ffmpegHLS.stderr.on("data", (data) => {

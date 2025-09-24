@@ -1,7 +1,7 @@
-const express = require("express");
-const { spawn } = require("child_process");
-const path = require("path");
-const fs=require("fs");
+const express = require("express");  // importing express
+const { spawn } = require("child_process"); 
+const path = require("path"); // importing path
+const fs=require("fs"); // importing fs for file
 
 const app = express();
 const PORT = 5000;
