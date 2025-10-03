@@ -7,16 +7,16 @@
 </head>
 <body>
   <h1>Live Stream</h1>
-  <video id="video" controls autoplay width="640" height="480"></video>
+  <video id="video" controls autoplay width="640" height="480"></video> <!-- Video player -->
 
   <script>
-    const video = document.getElementById('video');
-    const videoSrc = '/hls/stream.m3u8';
+    const video = document.getElementById('video'); 
+    const videoSrc = '/hls/stream.m3u8'; 
 
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(videoSrc);
-      hls.attachMedia(video);
+    if (Hls.isSupported()) { // if hls
+      const hls = new Hls(); // initializes HLS
+      hls.loadSource(videoSrc); // loading hls source
+      hls.attachMedia(video); 
       hls.on(Hls.Events.MANIFEST_PARSED, function() {
         video.play();
       });
